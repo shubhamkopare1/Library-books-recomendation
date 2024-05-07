@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <style>
+        .main{
+            
+            width: 60%;
+            background-color: black;
+            color: white;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: black;
+        }
+        .h1{
+            font-size: 3rem;
+    font-style: normal;
+    font-family: sans-serif;
+    text-align: center;
+    
+        }
+        .input{
+            width: 73%;
+    height: 2rem;
+    border-radius: 3px;
+   
+        }
+        .head{
+            display: flex;
+            justify-content: center;
+            gap: .5rem;
+            margin-bottom: 3rem;
+        }
+        img{
+            height: 9rem;
+        }
+        .data{
+            display: flex;
+    gap: 2rem;
+    align-items: center;
+   
+        }
+        .datas{
+            margin: 0px 5rem;
+        }
+        .title{
+            margin-bottom: 2px;
+            font-size: 1.6rem;
+        }
+        .btn1{
+            width: 5rem;
+            height: 1.7rem;
+            background: rgb(229, 9, 20);
+            border: 1px solid rgb(229, 9, 20);
+            color: white;
+        }
+        .btn{
+            background: rgb(229, 9, 20);
+            border: 1px solid rgb(229, 9, 20);
+            color: white;
+            width: 4rem;
+        }
+        .name{
+         margin-bottom: 2rem
+        }
+     .tt{
+        color: #57d8fa;
+     }
+     .g{
+        color: #28a1be;
+     }
+     .p{
+        color: #fab440;
+     }
+     .c{
+        color: #fe5784;
+     }
+     .e{
+        color: #cc0e41;
+     }
+     .t{
+color: #73b66b;
+     }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1 class="h1">Library Book Recommender System of <span class="tt">T</span><span class="g">G</span><span class="p">P</span><span class="c">C</span><span class="e">E</span><span class="t">T </span>College</h1>
+    <form class="head" action="/books" method="GET">
+        <input class="input" type="text" name="title" placeholder="Enter the title of the book" value="<%= queryTitle %>">
+        <button class="btn" type="submit">Search</button>
+    </form>
+    <div class="datas">
+        <% for(data of allData){ %>
+            <div class="data"> 
+                <img src= <%= data.image %> alt="">
+                <div class="name">
+                <h1 class="title"><%= data.title[0] %> <%=data.title[1] %></h1>
+                <p><%= data.description %></p> 
+                <form action="/books/<%=data._id %>">
+                    <button class="btn1">view</button>
+                 </form>
+            </div>
+                
+            </div>
+            <br>
+        <% } %>
+
+    </div></div>
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>information</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: center;
+            height: 95vh;
+            gap: 3rem;
+            align-items: center;
+            
+        }
+        body{
+            background-color: black;
+            color: white;
+        }
+        .data{
+            width: 43rem;
+        }
+        img{
+            height: 18rem;
+           margin-bottom: .5rem;
+        }
+        .p{
+            width: 14rem;
+        }
+        .imgdata{
+            display: flex;
+    width: 17rem;
+    flex-direction: column;
+    align-items: center;
+    margin-top:2.2rem;
+    height: 28rem;
+    
+        }
+        spam{
+            font-size: 1.3rem;
+        }
+        .img{
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            margin-left: .5rem;
+           
+        }
+        .logo{
+            display: flex;
+    gap: 1rem;
+    align-items: center;
+        }
+        button{
+            color: white;
+    background: rgb(229, 9, 20);
+    border: 1px solid red;
+    height: 2rem;
+        }
+        .btn{
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="imgdata">
+            <div class="logo">
+                <img class="img" src="<%=bookdata.image %>" alt="">
+                <p><%= bookdata.title %> </p>
+            </div>
+            <img src="<%= bookdata.image %>" alt="">
+            <p class="p"> <spam>Author :</spam> <%=bookdata.author %></p> 
+            <br>
+           
+        </div>
+        <div class="data">
+            <h1><%= bookdata.title[0] %></h1>
+            <p ><%= bookdata.info %></p>
+            <div class="btn">
+                
+               <!-- <a href="<%= bookdata.link %>" ><button>show more</button></a>  -->
+                <form method="post" action="/books/book"><button>Back</button></form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
